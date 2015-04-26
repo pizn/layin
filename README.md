@@ -65,3 +65,7 @@
 ##### 直接使用
 
 拷贝`layout.css`添加到自己的页面即可。
+
+#### 联系
+
+* Author: [PIZn](http://www.zhanxin.info/contact.html)
