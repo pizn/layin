@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Layin</title>
+  <meta name="description" content="Another css grid system - Layin" />
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial,"Hiragino Sans GB","Microsoft Yahei","Microsoft Sans Serif","WenQuanYi Micro Hei",sans-serif;
+      max-width: 1024px;
+      font-size: 14px;;
+      color: #444;
+      margin: 3rem auto;
+    }
+    [row] {
+      background: #f1f1f1;
+    }
+    [demo-box] {
+      box-sizing: border-box;
+      margin: 0.5rem 0.75rem 0.5rem 0;
+      padding: 0.5rem 0;
+      color: #fff;
+      background: #186DEE;
+      text-align: center;
+      border-radius: 3px;
+    }
+    [demo-box~="large"] {
+      padding: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Layin Grid System</h1>
+
+  <h2>Normal grid</h2>
+  <div row>
+    <div col="12"><div demo-box>12</div></div>
+  </div>
+  <div row>
+    <div col="6"><div demo-box>6</div></div>
+    <div col="6"><div demo-box>6</div></div>
+  </div>
+  <div row>
+    <div col="4"><div demo-box>4</div></div>
+    <div col="4"><div demo-box>4</div></div>
+    <div col="4"><div demo-box>4</div></div>
+  </div>
+  <div row>
+    <div col="3"><div demo-box>3</div></div>
+    <div col="3"><div demo-box>3</div></div>
+    <div col="3"><div demo-box>3</div></div>
+    <div col="3"><div demo-box>3</div></div>
+  </div>
+  <div row>
+    <div col="2"><div demo-box>2</div></div>
+    <div col="2"><div demo-box>2</div></div>
+    <div col="2"><div demo-box>2</div></div>
+    <div col="2"><div demo-box>2</div></div>
+    <div col="2"><div demo-box>2</div></div>
+    <div col="2"><div demo-box>2</div></div>
+  </div>
+
+  <h2>Made with flexbox</h2>
+  <p>Top row</p>
+  <div row="flex" row-align="start top">
+    <div col="4">
+      <div demo-box="large">4</div>
+    </div>
+    <div col="4">
+      <div demo-box>4</div>
+    </div>
+    <div col="4">
+      <div demo-box>4</div>
+    </div>
+  </div>
+  <p>Center row</p>
+  <div row="flex" row-align="start center">
+    <div col="4">
+      <div demo-box="large">4</div>
+    </div>
+    <div col="4">
+      <div demo-box>4</div>
+    </div>
+    <div col="4">
+      <div demo-box>4</div>
+    </div>
+  </div>
+  <p>Bottom row</p>
+  <div row="flex" row-align="start end">
+    <div col="4">
+      <div demo-box="large">4</div>
+    </div>
+    <div col="4">
+      <div demo-box>4</div>
+    </div>
+    <div col="4">
+      <div demo-box>4</div>
+    </div>
+  </div>
+  <p>space-between</p>
+  <div row="flex" row-align="space-between">
+    <div col="3">
+      <div demo-box>3</div>
+    </div>
+    <div col="3">
+      <div demo-box>3</div>
+    </div>
+    <div col="3">
+      <div demo-box>3</div>
+    </div>
+  </div>
+  <p>space-around</p>
+  <div row="flex" row-align="space-around">
+    <div col="3">
+      <div demo-box>3</div>
+    </div>
+    <div col="3">
+      <div demo-box>3</div>
+    </div>
+    <div col="3">
+      <div demo-box>3</div>
+    </div>
+  </div>
+  <h2>Offset</h2>
+  <div row>
+    <div col="1" col-offset="1">
+      <div demo-box>offset-1</div>
+    </div>
+    <div col="1" col-offset="8">
+      <div demo-box>offset-8</div>
+    </div>
+  </div>
+  <div row>
+    <div col="1" col-offset="2">
+      <div demo-box>offset-2</div>
+    </div>
+    <div col="1" col-offset="6">
+      <div demo-box>offset-6</div>
+    </div>
+  </div>
+  <div row>
+    <div col="1" col-offset="3">
+      <div demo-box>offset-3</div>
+    </div>
+    <div col="1" col-offset="4">
+      <div demo-box>offset-4</div>
+    </div>
+  </div>
+  <h2>Pull && Push</h2>
+  <p>Normal</p>
+  <div row>
+    <div col="33"><div demo-box>33%</div></div>
+    <div col="66"><div demo-box>66%</div></div>
+  </div>
+  <p>Change</p>
+  <div row>
+    <div col="33" col-push="66"><div demo-box>33%</div></div>
+    <div col="66" col-pull="33"><div demo-box>66%</div></div>
+  </div>
+  <h2>Order - width flexbox</h2>
+  <p>Normal</p>
+  <div row="flex">
+    <div col="33" col-order="1"><div demo-box>33%</div></div>
+    <div col="66" col-order="2"><div demo-box>66%</div></div>
+  </div>
+  <p>Change</p>
+  <div row="flex">
+    <div col="33" col-order="2"><div demo-box>33%</div></div>
+    <div col="66" col-order="1"><div demo-box>66%</div></div>
+  </div>
+</body>
+</html>

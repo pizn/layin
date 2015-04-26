@@ -1,0 +1,169 @@
+@layin-cols: 12;
+
+/*------ row ------*/
+[row] {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0;
+  padding: 0 0;
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Made with flexbox
+[row~="flex"] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &:before,
+  &:after {
+    display: flex;
+  }
+}
+
+
+[row-align="start"],
+[row-align="start center"],
+[row-align="start start"],
+[row-align="start end"] {
+  justify-content: flex-start;
+}
+
+[row-align="center"],
+[row-align="center center"],
+[row-align="center start"],
+[row-align="center end"] {
+  justify-content: center;
+}
+
+[row-align="end"],
+[row-align="end center"],
+[row-align="end start"],
+[row-align="end end"] {
+  justify-content: flex-end;
+}
+
+[row-align="space-between"],
+[row-align="space-between center"],
+[row-align="space-between start"],
+[row-align="space-between end"] {
+  justify-content: space-between;
+}
+
+[row-align="space-around"],
+[row-align="space-around center"],
+[row-align="space-around start"],
+[row-align="space-around end"] {
+  justify-content: space-around;
+}
+
+[row-align="center start"],
+[row-align="start start"],
+[row-align="end start"],
+[row-align="space-between start"],
+[row-align="space-around start"] {
+  align-items: flex-start;
+}
+
+[row-align="center center"],
+[row-align="start center"],
+[row-align="end center"],
+[row-align="space-between center"],
+[row-align="space-around center"] {
+  align-items: center;
+}
+
+[row-align="center end"],
+[row-align="start end"],
+[row-align="end end"],
+[row-align="space-between end"],
+[row-align="space-around end"] {
+  align-items: flex-end;
+}
+
+/*------ col ------*/
+[col] {
+  position: relative;
+  display: block;
+  float: left;
+  flex: 0 0 auto;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+// fixed col in table
+table td[col],
+table th[col] {
+  position: static;
+  float: none;
+  display: table-cell;
+}
+
+.loop-col-make(@order) when (@order > 0){
+  .loop-col-make((@order - 1));
+  [col="@{order}"] {
+    width: percentage(@order / @layin-cols);
+    flex: 0 0 percentage(@order / @layin-cols);
+  }
+  [col-offset="@{order}"] {
+    margin-left: percentage(@order / @layin-cols);
+  }
+  [col-pull="@{order}"] {
+    right: percentage(@order / @layin-cols);
+  }
+  [col-push="@{order}"] {
+    left: percentage(@order / @layin-cols);
+  }
+}
+.loop-col-make(@layin-cols);
+
+[col="33"],
+[col="34"] {
+  width: 33.33333333%;
+  flex: 0 0 33.33333333%;
+}
+[col="66"],
+[col="67"] {
+  width: 66.66666666%;
+  flex: 0 0 66.66666666%;
+}
+[col-offset="33"],
+[col-offset="34"] {
+  margin-left: 33.33333333%;
+}
+[col-offset="66"],
+[col-offset="67"] {
+  margin-left: 66.66666666%;
+}
+[col-pull="33"],
+[col-pull="34"] {
+  right: 33.33333333%;
+}
+[col-push="33"],
+[col-push="34"] {
+  left: 33.33333333%;
+}
+[col-pull="66"],
+[col-pull="67"] {
+  right: 66.66666666%;
+}
+[col-push="66"],
+[col-push="67"] {
+  left: 66.66666666%;
+}
+
+.loop-col-order(@order) when (@order > 0) {
+  .loop-col-order((@order - 1));
+  [col-order="@{order}"] { order: @order; }
+}
+.loop-col-order(@layin-cols);

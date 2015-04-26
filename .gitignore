@@ -1,9 +1,3 @@
-*.log
-.DS_STORE
-bower_components
+.DS_store
+.idea
 node_modules
-dist
-
-/.idea/
-/components
-/vendor
