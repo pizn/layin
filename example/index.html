@@ -35,8 +35,17 @@
 
   <h2>Normal grid</h2>
   <div row>
-    <div col="12"><div demo-box>12</div></div>
+    <div col="3">
+      <div demo-box="large">3</div>
+    </div>
+    <div col="4">
+      <div demo-box>4</div>
+    </div>
+    <div col="5">
+      <div demo-box>5</div>
+    </div>
   </div>
+
   <div row>
     <div col="6"><div demo-box>6</div></div>
     <div col="6"><div demo-box>6</div></div>
@@ -62,6 +71,18 @@
   </div>
 
   <h2>Made with flexbox</h2>
+  <div row="flex" row-align="center center">
+    <div col="3" col-order="3">
+      <div demo-box="large">3</div>
+    </div>
+    <div col="4" col-order="2">
+      <div demo-box>4</div>
+    </div>
+    <div col="5" col-order="1">
+      <div demo-box>5</div>
+    </div>
+  </div>
+
   <p>Top row</p>
   <div row="flex" row-align="start top">
     <div col="4">
