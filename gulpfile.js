@@ -4,6 +4,7 @@ var minifyCss = require('gulp-minify-css');
 var connect = require('gulp-connect');
 var rename = require('gulp-rename');
 var gutil = require('gulp-util');
+var ghPages = require('gulp-gh-pages');
 
 gulp.task('css', function() {
   return gulp.src('src/layout.less')
@@ -23,6 +24,11 @@ gulp.task('watch', ['css', 'connect'], function() {
       .pipe(connect.reload());
   })
 })
+
+gulp.task('deploy', function() {
+  return gulp.src('./example/**/*')
+    .pipe(ghPages());
+});
 
 gulp.task('connect', ['css'], function() {
   connect.server({
