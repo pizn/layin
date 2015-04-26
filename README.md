@@ -53,3 +53,15 @@
 | col-offset | 1 ~ 12 | | 
 | col-pull | 1 ~ 12 | | 
 | col-push | 1 ~ 12  | | 
+
+#### 使用
+
+##### 参与开发
+
+1. Clone this repo
+2. Npm install
+3. Gulp
+
+##### 直接使用
+
+拷贝`layout.css`添加到自己的页面即可。
